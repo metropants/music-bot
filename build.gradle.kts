@@ -27,7 +27,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("net.dv8tion:JDA:5.0.0-beta.9")
     implementation("com.github.minndevelopment:jda-ktx:0.10.0-beta.1")
-    implementation("com.github.walkyst:lavaplayer-fork:1.4.1")
+    implementation("com.github.walkyst:lavaplayer-fork:1.4.2")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 

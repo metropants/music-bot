@@ -26,7 +26,7 @@ class StopCommand(val music: MusicService) : Command("stop", "Stops the music fr
         manager.disconnect().also {
             event.replyEmbeds(Embed {
                 color = 0x1C7ED6
-                description = "${member.asMention} stopped the music."
+                description = "${member.effectiveName} stopped the music."
             }).queue()
         }
     }

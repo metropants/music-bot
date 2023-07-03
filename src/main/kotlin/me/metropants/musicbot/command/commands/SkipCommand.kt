@@ -1,6 +1,5 @@
 package me.metropants.musicbot.command.commands
 
-import dev.minn.jda.ktx.coroutines.await
 import dev.minn.jda.ktx.messages.Embed
 import me.metropants.musicbot.command.Command
 import me.metropants.musicbot.service.MusicService
@@ -20,7 +19,7 @@ class SkipCommand(private val music: MusicService) : Command("skip", "Skips the 
             event.replyEmbeds(Embed {
                 color = 0x1C7ED6
                 description = "No songs playing to skip."
-            }).await()
+            }).queue()
             return
         }
 
@@ -28,8 +27,8 @@ class SkipCommand(private val music: MusicService) : Command("skip", "Skips the 
             event.replyEmbeds(Embed {
                 color = 0x1C7ED6
                 description = "Skipped: `${current.info.title}`"
-                footer("Skipped by: ${member.user.asTag}", member.effectiveAvatarUrl)
-            }).await()
+                footer("Skipped by: ${member.user.name}", member.effectiveAvatarUrl)
+            }).queue()
         }
     }
 

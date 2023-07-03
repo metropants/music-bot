@@ -13,8 +13,8 @@ class ReadyListener(jda: JDA) {
 
     init {
         jda.listener<ReadyEvent> {
-            val tag = it.jda.selfUser.asTag
-            logger.info("$tag is now online.")
+            val name = it.jda.selfUser.name
+            logger.info("$name is now online.")
         }
     }
 

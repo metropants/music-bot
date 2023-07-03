@@ -20,7 +20,7 @@ class AudioResultHandler(private val scheduler: GuildAudioScheduler, private val
             hook.sendMessageEmbeds(Embed {
                 color = 0x1C7ED6
                 description = "Queued: `${track.info.title}`"
-                footer("Requested by: ${request.requester.user.asTag}", request.requester.effectiveAvatarUrl)
+                footer("Requested by: ${request.requester.user.name}", request.requester.effectiveAvatarUrl)
             }).queue()
             return
         }
@@ -28,7 +28,7 @@ class AudioResultHandler(private val scheduler: GuildAudioScheduler, private val
         hook.sendMessageEmbeds(Embed {
             color = 0x1C7ED6
             description = "Now playing: `${track.info.title}`"
-            footer("Requested by: ${request.requester.user.asTag}", request.requester.effectiveAvatarUrl)
+            footer("Requested by: ${request.requester.user.name}", request.requester.effectiveAvatarUrl)
         }).queue()
     }
 
@@ -45,7 +45,7 @@ class AudioResultHandler(private val scheduler: GuildAudioScheduler, private val
             hook.sendMessageEmbeds(Embed {
                 color = 0x1C7ED6
                 description = "Queued: `${track.info.title}`"
-                footer("Requested by: ${request.requester.user.asTag}", request.requester.effectiveAvatarUrl)
+                footer("Requested by: ${request.requester.user.name}", request.requester.effectiveAvatarUrl)
             }).queue()
         }
 
@@ -63,7 +63,7 @@ class AudioResultHandler(private val scheduler: GuildAudioScheduler, private val
         request.hook.sendMessageEmbeds(Embed {
             color = 0x1C7ED6
             description = "No results found."
-            footer("Requested by: ${request.requester.user.asTag}", request.requester.effectiveAvatarUrl)
+            footer("Requested by: ${request.requester.user.name}", request.requester.effectiveAvatarUrl)
         }).queue()
     }
 
@@ -71,7 +71,7 @@ class AudioResultHandler(private val scheduler: GuildAudioScheduler, private val
         request.hook.sendMessageEmbeds(Embed {
             color = 0x1C7ED6
             description = exception?.localizedMessage ?: "Failed to load song."
-            footer("Requested by: ${request.requester.user.asTag}", request.requester.avatarUrl)
+            footer("Requested by: ${request.requester.user.name}", request.requester.avatarUrl)
         }).queue()
     }
 

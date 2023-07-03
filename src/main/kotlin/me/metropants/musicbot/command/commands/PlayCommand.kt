@@ -1,6 +1,5 @@
 package me.metropants.musicbot.command.commands
 
-import dev.minn.jda.ktx.coroutines.await
 import dev.minn.jda.ktx.messages.Embed
 import me.metropants.musicbot.audio.modal.SongRequest
 import me.metropants.musicbot.command.Command
@@ -43,7 +42,7 @@ class PlayCommand(
                 event.hook.sendMessageEmbeds(Embed {
                     color = 0x1C7ED6
                     description = "Something went wrong. Try again."
-                }).await()
+                }).queue()
             }
         }
 
